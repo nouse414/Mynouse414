@@ -1,0 +1,16 @@
+{
+  "id": "com.myname.nuvio",
+  "version": "1.0.0",
+  "name": "My Nuvio P2P Addon",
+  "description": "Personal addon for authorized P2P media sources",
+  "resources": [
+    "stream"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "idPrefixes": [
+    "tt"
+  ]
+}
