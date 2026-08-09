@@ -14,13 +14,11 @@ app.get("/manifest.json", (req, res) => {
     idPrefixes: ["tt"]
   });
 });
+const PORT = process.env.PORT || 3000;
 
-app.get("/stream/:type/:id.json", (req, res) => {
-  res.json({
-    streams: []
-  });
+app.listen(PORT, "0.0.0.0", () => {
+  console.log("Addon running on port " + PORT);
 });
-
 
 app.listen(PORT, ("0.0.0.0") => {
   console.log(`Addon running on port ${PORT}`);
