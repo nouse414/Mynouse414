@@ -21,7 +21,13 @@ app.get("/manifest.json", (req, res) => {
 
 app.get("/stream/:type/:id.json", (req, res) => {
   res.json({
-    streams: []
+    streams: [
+      {
+        name: "My Test Stream",
+        title: "Test stream",
+        url: "https://example.com/video.mp4"
+      }
+    ]
   });
 });
 
