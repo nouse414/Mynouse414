@@ -3,16 +3,20 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Put an authorized magnet link here for testing.
+const TEST_MAGNET =
+  "magnet:?xt=urn:btih:YOUR_AUTHORIZED_TORRENT_HASH";
+
 app.get("/", (req, res) => {
-  res.send("My Nuvio addon is running!");
+  res.send("My Nuvio P2P addon is running!");
 });
 
 app.get("/manifest.json", (req, res) => {
   res.json({
-    id: "com.mynuvio.addon",
+    id: "com.mynuvio.p2p",
     version: "1.0.0",
-    name: "My Nuvio Addon",
-    description: "Personal addon",
+    name: "My Nuvio P2P Addon",
+    description: "Personal P2P addon for authorized media",
     resources: ["stream"],
     types: ["movie", "series"],
     idPrefixes: ["tt"]
@@ -23,9 +27,9 @@ app.get("/stream/:type/:id.json", (req, res) => {
   res.json({
     streams: [
       {
-        name: "My Test Stream",
-        title: "Test stream",
-        url: "https://example.com/video.mp4"
+        name: "My P2P Source",
+        title: "Authorized P2P stream",
+        url: TEST_MAGNET
       }
     ]
   });
